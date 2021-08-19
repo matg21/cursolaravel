@@ -15,7 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    echo "<a href=". route('contactos') .">Contacto</a><br>";
+echo "<a href=". route('contactos') .">Contacto</a><br>";
+echo "<a href=". route('contactos') .">Contacto</a><br>";
+echo "<a href=". route('contactos') .">Contacto</a><br>";
+echo "<a href=". route('contactos') .">Contacto</a><br>";
 });
+
+Route::get('contactame', ['as' => 'contactos', function () {
+    return "Seccion de contactos";
+}]);
+
+Route::get('saludos/{nombre}', function ($nombre = "Invitado") {
+    return "Saludos $nombre";
+})->where('nombre', "[A-Za-z]+");
 
 
