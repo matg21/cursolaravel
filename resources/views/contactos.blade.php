@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,8 +8,11 @@
 </head>
 <body>
     <h1>contactos</h1>
-    <a href="<?php echo route('home'); ?>">Inicio</a>
-    <a href="<?php echo route('saludos', 'jorge'); ?>">Saludos</a>
-    <a href="<?php echo route('contactos'); ?>">Contactos</a>
+ 
 </body>
-</html>
+</html> -->
+@extends('layout')
+
+@section('contenido')
+<h1>Contactos</h1>
+@stop
