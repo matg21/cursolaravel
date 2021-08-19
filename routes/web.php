@@ -14,20 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    echo "<a href=". route('contactos') .">Contacto</a><br>";
-echo "<a href=". route('contactos') .">Contacto</a><br>";
-echo "<a href=". route('contactos') .">Contacto</a><br>";
-echo "<a href=". route('contactos') .">Contacto</a><br>";
-echo "<a href=". route('contactos') .">Contacto</a><br>";
-});
-
-Route::get('contactame', ['as' => 'contactos', function () {
-    return "Seccion de contactos";
+Route::get('/', ['as' => 'home', function () {
+    return view('home');
 }]);
 
-Route::get('saludos/{nombre}', function ($nombre = "Invitado") {
-    return "Saludos $nombre";
-})->where('nombre', "[A-Za-z]+");
+Route::get('contactame', ['as' => 'contactos', function () {
+    return view('contactos');
+}]);
+
+Route::get('saludos/{nombre}', ['as' => 'saludos', function ($nombre = "Invitado") {
+    //return view('saludo', ['nombre' => $nombre] );
+    //return view('saludo')->with(['nombre' => $nombre]);
+    return view('saludo', compact('nombre'));
+}])->where('nombre', "[A-Za-z]+");
 
 
