@@ -32,12 +32,13 @@ class PageController extends Controller
 
     public function mensajes(CreateMessageRequest $request)
     {
-        return $request->all();
+        $data = $request->all();
         /* if ($request->input('nombre') != null) {
            return "Si tiene nombre. es ". $request->input('nombre');
         } else {
             return "No tiene nombre";
         } */
+        return back()->with('info', 'Tu mensaje se envio con exito :)');
 
         
         
