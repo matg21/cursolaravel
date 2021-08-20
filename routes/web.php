@@ -19,7 +19,7 @@ Route::get('/', ['as' => 'home', function () {
     return view('home');
 }]); */
 
-Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/', [PageController::class, 'home'])->name('home')->middleware('example');
 
 Route::get('contactame', [PageController::class, 'contactos'])->name('contactos');
 Route::post('contacto', [PageController::class, 'mensajes']);

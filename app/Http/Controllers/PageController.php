@@ -9,6 +9,10 @@ use App\Http\Requests\CreateMessageRequest;
 class PageController extends Controller
 {
     protected $request;
+    public function __construct()
+    {
+        $this->middleware('example', ['except' => 'home']);
+    }
    
     public function home()
     {
