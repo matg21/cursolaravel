@@ -22,6 +22,7 @@ Route::get('/', ['as' => 'home', function () {
 Route::get('/', [PageController::class, 'home'])->name('home');
 
 Route::get('contactame', [PageController::class, 'contactos'])->name('contactos');
+Route::post('contacto', [PageController::class, 'mensajes']);
 
 Route::get('saludos/{nombre}', [PageController::class, 'saludos'])->name('saludos')->where('nombre', "[A-Za-z]+"); 
 
