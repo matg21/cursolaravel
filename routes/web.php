@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +27,8 @@ Route::post('contacto', [PageController::class, 'mensajes']);
 
 Route::get('saludos/{nombre}', [PageController::class, 'saludos'])->name('saludos')->where('nombre', "[A-Za-z]+"); 
 
-
-
+Route::get('mensajes/create', [MessagesController::class, 'create'])->name('messages.create');
+Route::get('mensajes', [MessagesController::class, 'index'])->name('messages.index');
+Route::post('mensajes', [MessagesController::class, 'store'])->name('messages.store');
 
 
