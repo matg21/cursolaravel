@@ -27,7 +27,9 @@ Route::post('contacto', [PageController::class, 'mensajes']);
 
 Route::get('saludos/{nombre}', [PageController::class, 'saludos'])->name('saludos')->where('nombre', "[A-Za-z]+"); 
 
-Route::get('mensajes/create', [MessagesController::class, 'create'])->name('messages.create');
+Route::resource('mensajes', MessagesController::class);
+
+/* Route::get('mensajes/create', [MessagesController::class, 'create'])->name('messages.create');
 Route::get('mensajes', [MessagesController::class, 'index'])->name('messages.index');
 Route::post('mensajes', [MessagesController::class, 'store'])->name('messages.store');
 
@@ -36,7 +38,7 @@ Route::get('mensajes/{id}/edit', [MessagesController::class, 'edit'])->name('mes
 Route::put('mensajes/{id}', [MessagesController::class, 'update'])->name('messages.update');
 
 
-Route::delete('mensajes/{id}', [MessagesController::class, 'destroy'])->name('messages.destroy');
+Route::delete('mensajes/{id}', [MessagesController::class, 'destroy'])->name('messages.destroy'); */
 
 
 
